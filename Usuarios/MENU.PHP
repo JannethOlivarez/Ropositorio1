@@ -20,7 +20,7 @@
                 <div class="caption">
                     <h3>LOTES</h3>
                     <p>
-                        <a href="http://localhost:8080/Ecuaforestar/Usuarios/Lotes/INGRESOL.php" class="btn btn-primary">Acceder</a>
+                        <a href="http://192.168.100.7:8080/Ecuaforestar/Usuarios/Lotes/INGRESOL.php" class="btn btn-primary">Acceder</a>
                     </p>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                 <div class="caption">
                     <h3>PLANTAS</h3>
                     <p>
-                        <a href="http://localhost:8080/Ecuaforestar/Usuarios/Plantas/INGRESO.PHP" class="btn btn-primary">Acceder</a>               
+                        <a href="http://192.168.100.7:8080/Ecuaforestar/Usuarios/Plantas/INGRESO.PHP" class="btn btn-primary">Acceder</a>               
                     </p>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                 <div class="caption">
                     <h3>PRODUCTOS</h3>      
                     <p>
-                        <a href="http://localhost:8080/Ecuaforestar/Usuarios/Productos/INGRESOP.php" class="btn btn-primary">Acceder</a>
+                        <a href="http://192.168.100.7:8080/Ecuaforestar/Usuarios/Productos/INGRESOP.php" class="btn btn-primary">Acceder</a>
                     </p>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                 <div class="caption">
                     <h3>REGISTRO DE SIEMBRA</h3>            
                     <p>
-                        <a href="http://localhost:8080/Ecuaforestar/Usuarios/PlantasLotes/INGRESOV.php" class="btn btn-primary">Acceder</a>
+                        <a href="http://192.168.100.7:8080/Ecuaforestar/Usuarios/PlantasLotes/INGRESOV.php" class="btn btn-primary">Acceder</a>
                     </p>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                 <div class="caption">
                     <h3>APLICACION DE PRODUCTOS</h3>            
                     <p>
-                        <a href="http://localhost:8080/Ecuaforestar/Usuarios/Aplicaciones/INGRESOA.php" class="btn btn-primary">Acceder</a>                 
+                        <a href="http://192.168.100.7:8080/Ecuaforestar/Usuarios/Aplicaciones/INGRESOA.php" class="btn btn-primary">Acceder</a>                 
                     </p>
                 </div>
             </div>
@@ -75,7 +75,7 @@
 </div>
 <h3>CONSULTAS</h3>            
                     <p>
-                        <a href="http://localhost:8080/Ecuaforestar/Usuarios/Consultas/CONSULTAS.php" class="btn btn-primary">Acceder</a>                 
+                        <a href="http://192.168.100.7:8080/Ecuaforestar/Usuarios/Consultas/CONSULTAS.php" class="btn btn-primary">Acceder</a>                 
                     </p>
         </body>
 		</div>
