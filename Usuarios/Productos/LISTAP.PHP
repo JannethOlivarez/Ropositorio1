@@ -1,11 +1,7 @@
 
 <?php
 require_once ("../../Includes/CONEXION.php");
-?>
-<?php
 require_once ("../../Includes/FUNCIONES.php");
-?>
-<?php
 require_once ("../../Includes/Diseno/CABEZERA.php");
 ?>
 
@@ -54,75 +50,76 @@ $registros = optener_todos_productos_quimicos();
         <title>Productos </title> 
     </head>
     <body>
-        <div class="row">
-            <?php echo $cabezera; ?>
+
+        <?php echo $cabezera; ?>
 
 
-            <div class="container">
-                <h1>Productos Quìmicos</h1>
-                <table  class="table table-striped">
-                    <thead class="thead-default">
-                        <tr >
 
-                            <th>PRODUCTO</th>    
-                            <th>PRINCIPIO ACTIVO</th>
-                            <th>CANTIDAD TOTAL</th>
-                            <th>FECHA ELABORACIÒN</th>  
-                            <th>FECHA VENCIMINETO</th>
-                            <th>ACTIVO</th>
-                        </tr>   
-                    </thead>
-                    <?php foreach ($registros as $reg) { ?>  
-                        <tr>
+        <h1>Productos Quìmicos</h1>
+        <table  class="table table-striped">
+            <thead class="thead-default">
+                <tr >
 
-                            <td><?php echo $reg['nombre_com']; ?></td>  
-                            <td><?php echo $reg['principio_activo']; ?></td>  
-                            <td><?php echo $reg['cantidad_prod']; ?></td>  
-                            <td><?php echo $reg['fecha_elab']; ?></td>    
-                            <td><?php echo $reg['fecha_cadu']; ?></td>
-                            <td><?php echo estado($reg['estado_actividad']); ?></td>
-                            <td><a href="INGRESOP.PHP?id=<?php echo $reg['id_producto']; ?>">Actualizar</a></td>  
-                            <?php
-                        }
-                        ?>
-                        </div>
+                    <th>PRODUCTO</th>    
+                    <th>PRINCIPIO ACTIVO</th>
+                    <th>CANTIDAD TOTAL</th>
+                    <th>FECHA ELABORACIÒN</th>  
+                    <th>FECHA VENCIMINETO</th>
+                    <th>ACTIVO</th>
+                </tr>   
+            </thead>
+            <?php foreach ($registros as $reg) { ?>  
+                <tr>
 
-                        <!DOCTYPE html>
+                    <td><?php echo $reg['nombre_com']; ?></td>  
+                    <td><?php echo $reg['principio_activo']; ?></td>  
+                    <td><?php echo $reg['cantidad_prod']; ?></td>  
+                    <td><?php echo $reg['fecha_elab']; ?></td>    
+                    <td><?php echo $reg['fecha_cadu']; ?></td>
+                    <td><?php echo estado($reg['estado_actividad']); ?></td>
+                    <td><a href="INGRESOP.PHP?id=<?php echo $reg['id_producto']; ?>">Actualizar</a></td>  
+                </tr>
+                <?php
+            }
+            ?>
 
 
-                </table>
-                <h1>Productos Orgànicos</h1>
-                <table  class="table table-striped">
-                    <thead class="thead-default">
-                        <tr >
-
-                            <th>PRODUCTO</th>    
-                            <th>PRINCIPIO ACTIVO</th>
-                            <th>CANTIDAD TOTAL</th>
-                            <th>FECHA ELABORACIÒN</th>  
-                            <th>FECHA VENCIMINETO</th>
-                            <th>ACTIVO</th>
-                        </tr>   
-                    </thead>
-                    <?php foreach ($registros as $reg) { ?>  
-                        <tr>
-
-                            <td><?php echo $reg['nombre_com']; ?></td>  
-                            <td><?php echo $reg['principio_activo']; ?></td>  
-                            <td><?php echo $reg['cantidad_prod']; ?></td>  
-                            <td><?php echo $reg['fecha_elab']; ?></td>    
-                            <td><?php echo $reg['fecha_cadu']; ?></td>
-                            <td><?php echo estado($reg['estado_actividad']) ?></td>
-                            <td><a href="INGRESOP.PHP?id=<?php echo $reg['id_producto']; ?>">Actualizar</a></td>  
-                            <?php
-                        }
-                        ?>
-                        </div>
-
-                        <!DOCTYPE html>
+            <!DOCTYPE html>
 
 
-                </table>
-                <a href="INGRESOP.PHP">Nueva</a>				
-                </body>
-                </html>
+        </table>
+        <h1>Productos Orgànicos</h1>
+        <table  class="table table-striped">
+            <thead class="thead-default">
+                <tr >
+
+                    <th>PRODUCTO</th>    
+                    <th>PRINCIPIO ACTIVO</th>
+                    <th>CANTIDAD TOTAL</th>
+                    <th>FECHA ELABORACIÒN</th>  
+                    <th>FECHA VENCIMINETO</th>
+                    <th>ACTIVO</th>
+                </tr>   
+            </thead>
+            <?php foreach ($registros as $reg) { ?>  
+                <tr>
+
+                    <td><?php echo $reg['nombre_com']; ?></td>  
+                    <td><?php echo $reg['principio_activo']; ?></td>  
+                    <td><?php echo $reg['cantidad_prod']; ?></td>  
+                    <td><?php echo $reg['fecha_elab']; ?></td>    
+                    <td><?php echo $reg['fecha_cadu']; ?></td>
+                    <td><?php echo estado($reg['estado_actividad']) ?></td>
+                    <td><a href="INGRESOP.PHP?id=<?php echo $reg['id_producto']; ?>">Actualizar</a></td>  
+                </tr>
+                <?php
+            }
+            ?>
+
+
+
+
+        </table>
+        <a href="INGRESOP.PHP">Nueva</a>				
+    </body>
+</html>
