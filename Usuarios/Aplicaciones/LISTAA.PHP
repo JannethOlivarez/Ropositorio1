@@ -49,6 +49,7 @@ $registros = obtener_todas_aplicaciones();
              <?php echo $cabezera; ?>	    
             <title>Plantas no tradicionales</title>
             <div class="container">
+                <a href="INGRESOA.PHP">Nueva</a>
             <table  class="table table-striped">
                 <thead class="thead-default">
                     <tr>
@@ -76,5 +77,5 @@ $registros = obtener_todas_aplicaciones();
                     ?>
             </table>  {{selectedOption}}  
         </div>
-            <a href="INGRESOA.PHP">Nueva</a>				
+            				
     </body>
