@@ -49,7 +49,7 @@ $registros = obtener_todas_aplicaciones();
              <?php echo $cabezera; ?>	    
             <title>Plantas no tradicionales</title>
             <div class="container">
-                <a href="INGRESOA.PHP">Nueva</a>
+                <a href="INGRESOA.PHP">Agregar nueva Aplicacion</a>
             <table  class="table table-striped">
                 <thead class="thead-default">
                     <tr>
