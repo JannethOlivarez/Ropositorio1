@@ -62,8 +62,7 @@ if (isset($_POST['h'])) {
     countryApp.controller('ConsultasCtrl', function ($scope, $rootScope, $http) {
 
         $scope.tabla1 = [];
-        $scope.tabla2 = [];
-        $scope.tabla4 = [];
+    
 
 
 
@@ -86,7 +85,7 @@ if (isset($_POST['h'])) {
 
         $scope.proximasAplicaciones = function () {           
             $http.get('consulta_json?consulta=proximasAplicaciones').success(function (data) {
-                $scope.tabla4 = data;
+                $scope.tabla1 = data;
 
             });
         };
@@ -95,7 +94,7 @@ if (isset($_POST['h'])) {
 
             $scope.ur = 'consulta_json?id=' + $scope.productoSeleccionado + '&consulta=aplicacionprod';
             $http.get('consulta_json?id=' + $scope.productoSeleccionado + '&consulta=aplicacionprod').success(function (data) {
-                $scope.tabla2 = data;
+                $scope.tabla1 = data;
 
             });
         };
@@ -178,7 +177,7 @@ if (isset($_POST['h'])) {
                 </div>
             </div>
             <div class="table-responsive">
-                <table class="table">
+                <table ng-repeat="aplicacion in tabla1" class="table">
                     <thead class="thead-default">
                         <tr>
                             <th>PRODUCTOS APLICADOS</th>                          
@@ -188,7 +187,7 @@ if (isset($_POST['h'])) {
                             <th>PROXIMA APLICACION</th> 
                         </tr>   
                     </thead>
-                    <tr ng-repeat="aplicacion in tabla1">
+                    <tr >
                         <th>{{aplicacion.nombre_com}}</th> 
                         <th>{{aplicacion.fecha_aplicacion}} </th> 
                         <th>{{aplicacion.tipotratamiento}}</th> 
@@ -203,7 +202,7 @@ if (isset($_POST['h'])) {
             <h4> Vencimiento:</h4> ??            
             <?php ///////////////////////TABLA DE PRODUCTOS////////////////////////////////////?>
             <div class="table-responsive">
-                <table class="table">
+                <table ng-repeat="aplicacionprod in tabla1" class="table">
                     <thead class="thead-default">
                         <tr>
                             <th>PLANTA APLICADA</th>   
@@ -211,7 +210,7 @@ if (isset($_POST['h'])) {
                             <th>FECHA DE APLICACION</th>                    
                         </tr>   
                     </thead>
-                    <tr ng-repeat="aplicacionprod in tabla2">                         
+                    <tr >                         
                         <th>{{aplicacionprod.nomb_planta}} </th> 
                         <th>{{aplicacionprod.cant_aplicada}}</th>  
                         <th>{{aplicacionprod.fecha_aplicacion}}</th>                                                                                                                                 
@@ -243,7 +242,7 @@ if (isset($_POST['h'])) {
             
             <?php ///////////////////////PROXIMAS APLICACIONES////////////////////////////////////?>
             <div class="table-responsive">
-                <table class="table">
+                <table ng-repeat="prox in tabla1" class="table">
                     <thead class="thead-default">
                         <tr>
                             <th>PROXIMA APLICACION</th>   
@@ -253,7 +252,7 @@ if (isset($_POST['h'])) {
                         </tr>   
                     </thead>
                 
-                    <tr ng-repeat="prox in tabla4">
+                    <tr >
                         <td>{{prox.fecha_prox}}</td>  
                         <td>{{prox.nombre_com}}</td>    
                         <td>{{prox.nomb_planta}}</td>
