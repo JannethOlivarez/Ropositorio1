@@ -39,6 +39,7 @@ $registros = RegistroVinculacion();
 
             <title>Vinculacion de plantas y lotes</title>	
             <div class="container ">
+                <a href="INGRESOV.PHP">Agregar nueva Siembra</a>
                 <table  class="table table-striped">
                     <thead class="thead-default">
                         <tr >
@@ -60,8 +61,7 @@ $registros = RegistroVinculacion();
                         <?php
                     }
                     ?>
-                </table>
-                <a href="INGRESOV.PHP">Nueva</a>                   		    		    		    		
+                </table>                 		    		    		    		
             </div>
     </body>
 </html>

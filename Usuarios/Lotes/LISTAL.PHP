@@ -29,6 +29,7 @@ $registros = obtener_todas_lotes();
         <?php echo $cabezera; ?>
         <title>Lotes</title> 
         <div class="container">
+            <a href="INGRESOL.PHP">Agregar nuevo Lote</a>
             <table  class="table table-striped">
                 <thead class="thead-default">
                     <tr >
@@ -51,7 +52,6 @@ $registros = obtener_todas_lotes();
 
 
             </table>
-        </div>
-        <a href="INGRESOL.PHP">Nueva</a>				
+        </div>				
     </body>
 </html>

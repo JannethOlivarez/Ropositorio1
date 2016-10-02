@@ -43,7 +43,7 @@ $registros = obtener_todas_plantas();
         <title>Plantas no tradicionales</title>	
 
         <div class="container">
-
+<a href="INGRESO.PHP">Agregar nueva Planta</a>
             <table  class="table table-striped">
                 <thead class="thead-default">
                     <tr>
@@ -70,7 +70,6 @@ $registros = obtener_todas_plantas();
 
 
         </div>
-
-        <a href="INGRESO.PHP">Nueva</a>				
+			
     </body>
 </html>
