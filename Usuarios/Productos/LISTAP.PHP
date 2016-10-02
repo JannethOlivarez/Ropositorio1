@@ -52,6 +52,7 @@ $registros = RegistroProductos();
                 <td><?php echo $reg['fecha_elab']; ?></td>    
                 <td><?php echo $reg['fecha_cadu']; ?></td>
                 <td><a href="INGRESOP.PHP?id=<?php echo $reg['id_producto']; ?>">Actualizar</a></td> 
+                
                 <td><a href="INGRESOP.PHP?id=<?php echo $reg['id_producto']; ?>">Aumentar cantidad</a></td> 
                 <?php
             }
