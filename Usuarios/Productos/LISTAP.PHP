@@ -24,6 +24,7 @@ if (isset($_POST['submit'])) {
     $tipo_sl= $_POST['unidad']; 
     if (logged_in()) {
         echo $unidad;
+        echo $unidad;
         echo $tipo_sl;
         //$var_mensaje = Productos($tipo, $nombrec, $principioa, $cantidadp, $fechaelab, $fechacadu);
         $var_mensaje = "Datos";
