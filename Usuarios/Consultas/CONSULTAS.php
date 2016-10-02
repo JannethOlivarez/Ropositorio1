@@ -251,7 +251,6 @@ if (isset($_POST['h'])) {
                             <th>TRATAMIENTO</th>  
                         </tr>   
                     </thead>
-                
                     <tr >
                         <td>{{prox.fecha_prox}}</td>  
                         <td>{{prox.nombre_com}}</td>    
