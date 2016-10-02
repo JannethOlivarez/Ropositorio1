@@ -1,6 +1,4 @@
-<?php
-require_once ("../../Includes/SESSION.php");
-?>
+
 <?php
 require_once ("../../Includes/CONEXION.php");
 ?>
@@ -20,17 +18,28 @@ if (isset($_POST['submit'])) {
     $cantidadp = $_POST['cantidadp'];
     $fechaelab = $_POST['fechaelab'];
     $fechacadu = $_POST['fechacadu'];
-    $unidad= $_POST['unidad']; 
-    $tipo_sl= $_POST['unidad']; 
+    $unidad = $_POST['unidad'];
+    $tipo_sl = $_POST['tipo_sl'];
     if (logged_in()) {
-        echo $unidad;
-        echo $unidad;
-        echo $tipo_sl;
+        if ($unidad != 4)) {
+            if (strcmp("L", $tipo_sl) == 0) {
+                switch ($tipo_sl) {
+                    case $value:
+
+
+                        break;
+
+                    default:
+                        break;
+                }
+            } else {
+                
+            }
+        }
         //$var_mensaje = Productos($tipo, $nombrec, $principioa, $cantidadp, $fechaelab, $fechacadu);
         $var_mensaje = "Datos";
     } else {
         $var_mensaje = "Datos insertadas";
-        
     }
 }
 $registros = optener_todos_productos_quimicos();
@@ -54,7 +63,7 @@ $registros = optener_todos_productos_quimicos();
                 <table  class="table table-striped">
                     <thead class="thead-default">
                         <tr >
-                          
+
                             <th>PRODUCTO</th>    
                             <th>PRINCIPIO ACTIVO</th>
                             <th>CANTIDAD TOTAL</th>
@@ -65,13 +74,13 @@ $registros = optener_todos_productos_quimicos();
                     </thead>
                     <?php foreach ($registros as $reg) { ?>  
                         <tr>
-                          
+
                             <td><?php echo $reg['nombre_com']; ?></td>  
                             <td><?php echo $reg['principio_activo']; ?></td>  
                             <td><?php echo $reg['cantidad_prod']; ?></td>  
                             <td><?php echo $reg['fecha_elab']; ?></td>    
                             <td><?php echo $reg['fecha_cadu']; ?></td>
-                            <td><?php echo estado($reg['estado_actividad']) ?></td>
+                            <td><?php echo estado($reg['estado_actividad']); ?></td>
                             <td><a href="INGRESOP.PHP?id=<?php echo $reg['id_producto']; ?>">Actualizar</a></td>  
                             <?php
                         }
@@ -86,7 +95,7 @@ $registros = optener_todos_productos_quimicos();
                 <table  class="table table-striped">
                     <thead class="thead-default">
                         <tr >
-                             
+
                             <th>PRODUCTO</th>    
                             <th>PRINCIPIO ACTIVO</th>
                             <th>CANTIDAD TOTAL</th>
@@ -97,7 +106,7 @@ $registros = optener_todos_productos_quimicos();
                     </thead>
                     <?php foreach ($registros as $reg) { ?>  
                         <tr>
-                        
+
                             <td><?php echo $reg['nombre_com']; ?></td>  
                             <td><?php echo $reg['principio_activo']; ?></td>  
                             <td><?php echo $reg['cantidad_prod']; ?></td>  
