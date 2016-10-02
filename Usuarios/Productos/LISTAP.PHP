@@ -31,6 +31,7 @@ $registros = RegistroProductos();
 ?>
 <title>Productos</title>    
 <div class="container">
+<a href="INGRESOP.PHP">Agregar nuevo Producto</a>
     <table  class="table table-striped">
         <thead class="thead-default">
             <tr >
@@ -50,11 +51,12 @@ $registros = RegistroProductos();
                 <td><?php echo $reg['cantidad_prod']; ?></td>  
                 <td><?php echo $reg['fecha_elab']; ?></td>    
                 <td><?php echo $reg['fecha_cadu']; ?></td>
-                <td><a href="INGRESOP.PHP?id=<?php echo $reg['id_producto']; ?>">Actualizar</a></td>  
+                <td><a href="INGRESOP.PHP?id=<?php echo $reg['id_producto']; ?>">Actualizar</a></td> 
+                <td><a href="INGRESOP.PHP?id=<?php echo $reg['id_producto']; ?>">Aumentar cantidad</a></td> 
                 <?php
             }
             ?>
-            </div>
+</div>
 
             <!DOCTYPE html>
         <html>
@@ -69,7 +71,6 @@ $registros = RegistroProductos();
                 <div class="row">
                     <?php echo $cabezera; ?>
 
-    </table>
-    <a href="INGRESOP.PHP">Nueva</a>				
+    </table>			
 </body>
 </html>
