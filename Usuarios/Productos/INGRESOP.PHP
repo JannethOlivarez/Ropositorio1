@@ -123,7 +123,7 @@ if (isset($_GET['id'])) {
                                 </td>
                                 <td>
                                   
-                                    <select name="unidad" id="unidad"    ng-options="unidad.label  as unidad.label for unidad in unidades track by unidad.id"
+                                    <select name="unidad" id="unidad"    ng-options="unidad.id  as unidad.label for unidad in unidades track by unidad.id"
                                             ng-model="unidad_sel" required> 
                                        
                                         <option value="">- Seleccione -</option>

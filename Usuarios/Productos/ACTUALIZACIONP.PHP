@@ -10,15 +10,16 @@ if (isset($_GET['id']))
     $principioa = $_POST['principioa'];
     $cantidadp = $_POST['cantidadp'];
     $fechaelab = $_POST['fechaelab'];
-    $fechacadu = $_POST['fechacadu'];  
+    $fechacadu = $_POST['fechacadu'];
+    $activo = $_POST['activo'];
     print_r($_POST);
     print_r($_GET);
     global $var_mysqli;
-    $query = "update productos set tipo_producto=?,nombre_com=?,principio_activo=?,cantidad_prod=?,fecha_elab=?,fecha_cadu=? where id_producto=?;";
+    $query = "update productos set tipo_producto=?,nombre_com=?,principio_activo=?,cantidad_prod=?,fecha_elab=?,fecha_cadu=?,estado_actividad=? where id_producto=?;";
     if (!$sentencia = $var_mysqli -> prepare($query)) {
         echo "Falló la PREPARACION: (" . $sentencia -> errno . ") " . $sentencia -> error;
     }
-    if (!$sentencia -> bind_param("sssissi",$tipo,$nombrec,$principioa,$cantidadp,$fechaelab,$fechacadu,$_GET['id'])) {
+    if (!$sentencia -> bind_param("sssissii",$tipo,$nombrec,$principioa,$cantidadp,$fechaelab,$fechacadu,$activo,$_GET['id'])) {
         echo "Falló la vinculación de parámetros: (" . $sentencia -> errno . ") " . $sentencia -> error;
     }
     if (!$sentencia -> execute()) {

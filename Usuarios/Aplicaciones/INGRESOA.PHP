@@ -41,7 +41,7 @@ if (isset($_GET['id'])) {
         }
     }
 }
-$productos = RegistroProductos();
+$productos = optener_todos_productos();
 $plantas = obtener_todas_plantas();
 ?>
 <script src="../../js/angular.min.js"></script>

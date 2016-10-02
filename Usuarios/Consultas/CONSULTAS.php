@@ -29,7 +29,7 @@ if (isset($_GET['id'])) {
     }
 }
 $plantas = obtener_todas_plantas();
-$productos = RegistroProductos()
+$productos = optener_todos_productos()
 ?>
 <?php
 $var_mensaje = "";

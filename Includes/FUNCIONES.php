@@ -253,9 +253,9 @@ function obtener_Plantita($id) {
 
 <?php
 
-function RegistroProductos() {
+function optener_todos_productos() {
     global $var_mysqli;
-    $query = "SELECT * FROM productos";
+    $query = "SELECT * FROM productos order by estado_actividad desc,tipo_producto,nombre_com asc";
     //Preparacion, parametrizacion,ejecucion del query 
     if (!$sentencia = $var_mysqli->prepare($query)) {
         echo "Fallo la preparacion: (" . $sentencia->errno . ") " . $sentencia->error;
@@ -270,7 +270,7 @@ function RegistroProductos() {
 
 function productos_quimico() {
     global $var_mysqli;
-    $query = "SELECT * FROM productos where tipo_producto= 'Quimico' order by nombre_com asc";
+    $query = "SELECT * FROM productos where tipo_producto= 'Quimico' and estado_actividad=1 order by nombre_com asc";
     //Preparacion, parametrizacion,ejecucion del query 
     if (!$sentencia = $var_mysqli->prepare($query)) {
         echo "Fallo la preparacion: (" . $sentencia->errno . ") " . $sentencia->error;
@@ -282,9 +282,25 @@ function productos_quimico() {
     return $resultado;
 }
 
+function estado($esta) {
+    if ($esta == 1) {
+        return "Activo";
+    } else {
+        return "Inactivo";
+    }
+}
+
+function estado_check($esta, $val) {
+    if (strcasecmp($esta, $val)==0) {
+        return "checked";
+    } else {
+        return "";
+    }
+}
+
 function productos_organico() {
     global $var_mysqli;
-    $query = "SELECT * FROM productos where tipo_producto= 'Organico' order by nombre_com asc";
+    $query = "SELECT * FROM productos where tipo_producto= 'Organico' and estado_actividad=1 order by nombre_com asc";
     //Preparacion, parametrizacion,ejecucion del query 
     if (!$sentencia = $var_mysqli->prepare($query)) {
         echo "Fallo la preparacion: (" . $sentencia->errno . ") " . $sentencia->error;
@@ -296,7 +312,34 @@ function productos_organico() {
     return $resultado;
     echo "regisatro";
 }
-
+function optener_todos_productos_organico() {
+    global $var_mysqli;
+    $query = "SELECT * FROM productos where tipo_producto= 'Organico' order by estado_actividad desc,tipo_producto,nombre_com asc";
+    //Preparacion, parametrizacion,ejecucion del query 
+    if (!$sentencia = $var_mysqli->prepare($query)) {
+        echo "Fallo la preparacion: (" . $sentencia->errno . ") " . $sentencia->error;
+    }
+    if (!$sentencia->execute()) {
+        echo "Fallo la ejecucion: (" . $sentencia->errno . ") " . $sentencia->error;
+    }
+    $resultado = mysqli_fetch_all($sentencia->get_result(), MYSQLI_ASSOC);
+    return $resultado;
+    echo "regisatro";
+}
+function optener_todos_productos_quimicos() {
+    global $var_mysqli;
+    $query = "SELECT * FROM productos where tipo_producto= 'Organico' order by estado_actividad desc,tipo_producto,nombre_com asc";
+    //Preparacion, parametrizacion,ejecucion del query 
+    if (!$sentencia = $var_mysqli->prepare($query)) {
+        echo "Fallo la preparacion: (" . $sentencia->errno . ") " . $sentencia->error;
+    }
+    if (!$sentencia->execute()) {
+        echo "Fallo la ejecucion: (" . $sentencia->errno . ") " . $sentencia->error;
+    }
+    $resultado = mysqli_fetch_all($sentencia->get_result(), MYSQLI_ASSOC);
+    return $resultado;
+    echo "regisatro";
+}
 function Productos($tipo, $nombrec, $principioa, $cantidadp, $fechaelab, $fechacadu) {
     global $var_mysqli;
     $query = "INSERT INTO productos (tipo_producto,nombre_com,principio_activo,cantidad_prod,fecha_elab,fecha_cadu) values (?,?,?,?,?,?);";
