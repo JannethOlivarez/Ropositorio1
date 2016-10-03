@@ -23,12 +23,14 @@ require_once ("../../Includes/Diseno/CABEZERA.php");
             {id: 5, label: "galon", conversion: 3.7854}
         ];
         $scope.unidades_solido = [
-            {id: 1, label: "mg", conversion: 0.001},
-            {id: 2, label: "cg", conversion: 0.01},
-            {id: 3, label: "dg", conversion: 0.1},
-            {id: 4, label: "gramo", conversion: 1},
-            {id: 5, label: "kg", conversion: 1000},
-            {id: 6, label: "Quintal", conversion: 100000}
+            {id: 0, label: "mg", conversion: 0.000001},
+            {id: 1, label: "cg", conversion: 0.00001},
+            {id: 2, label: "dg", conversion: 0.0001},
+            {id: 3, label: "gramo", conversion: 0.001},
+            {id: 4, label: "kg", conversion: 1},
+            {id: 4, label: "Oz", conversion: 0.0283495},
+            {id: 4, label: "Lb", conversion: 0.453592},
+            {id: 5, label: "Quintal", conversion: 100}
         ];
         $scope.cambiar_unidades = function (vari) {
             if (vari == 1) {
@@ -123,11 +125,8 @@ if (isset($_GET['id'])) {
                                 </td>
                                 <td>
                                   
-                                    <select name="unidad" id="unidad"    ng-options="unidad.id  as unidad.label for unidad in unidades track by unidad.id"
+                                    <select name="unidad" id="unidad"    ng-options="unidad as unidad.label for unidad in unidades track by unidad.id"
                                             ng-model="unidad_sel" required> 
-                                       
-                                        <option value="">- Seleccione -</option>
-
                                     </select>  
                                 </td>                 
                             </tr>                          

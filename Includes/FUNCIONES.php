@@ -1,5 +1,4 @@
 <?php
-
 require_once ("SESSION.php");
 ?>
 <?php
@@ -328,7 +327,7 @@ function optener_todos_productos_organico() {
 }
 function optener_todos_productos_quimicos() {
     global $var_mysqli;
-    $query = "SELECT * FROM productos where tipo_producto= 'Organico' order by estado_actividad desc,tipo_producto,nombre_com asc";
+    $query = "SELECT * FROM productos where tipo_producto= 'Quimico' order by estado_actividad desc,tipo_producto,nombre_com asc";
     //Preparacion, parametrizacion,ejecucion del query 
     if (!$sentencia = $var_mysqli->prepare($query)) {
         echo "Fallo la preparacion: (" . $sentencia->errno . ") " . $sentencia->error;
@@ -340,19 +339,71 @@ function optener_todos_productos_quimicos() {
     return $resultado;
     echo "regisatro";
 }
-function Productos($tipo, $nombrec, $principioa, $cantidadp, $fechaelab, $fechacadu) {
-    global $var_mysqli;
-    $query = "INSERT INTO productos (tipo_producto,nombre_com,principio_activo,cantidad_prod,fecha_elab,fecha_cadu) values (?,?,?,?,?,?);";
+function Productos($tipo, $nombrec, $principioa, $cantidadp, $fechaelab, $fechacadu,$tipo_sl,$unidad) {
+    global $var_mysqli;    
+    $tipo_estado;
+    if (strcmp("L", $tipo_sl) == 0) {
+        $tipo_estado="liquido";
+    }else{
+        $tipo_estado="solido";
+    }
+    
+     if ($unidad != 4) {
+            if (strcmp("L", $tipo_sl) == 0) {
+                switch ($unidad) {
+                    case 1:
+                        $cantidadp = $cantidadp * 0.001;
+                        break;
+                    case 2:
+                        $cantidadp = $cantidadp * 0.01;
+                        break;
+                    case 3:
+                        $cantidadp = $cantidadp * 0.1;
+                        break;
+                    case 5:
+                        $cantidadp = $cantidadp * 3.7854;
+                        break;
+                    default:
+                        $cantidadp = $cantidadp;
+                        break;
+                }
+            } else {
+                switch ($unidad) {
+                    case 0:
+                        $cantidadp = $cantidadp * 0.000001;
+                        break;
+
+                    case 1:
+                        $cantidadp = $cantidadp * 0.00001;
+                        break;
+                    case 2:
+                        $cantidadp = $cantidadp * 0.0001;
+                        break;
+                    case 3:
+                        $cantidadp = $cantidadp * 0.001;
+                        break;
+                    case 5:
+                        $cantidadp = $cantidadp * 0.0283495;
+                        break;
+                    case 5:
+                        $cantidadp = $cantidadp * 100;
+                        break;
+                    default:
+                        break;
+                }
+            }
+     }
+    $query = "INSERT INTO productos (tipo_producto,nombre_com,principio_activo,cantidad_prod,fecha_elab,fecha_cadu,estado_sl) values (?,?,?,?,?,?,?);";
     if (!$sentencia = $var_mysqli->prepare($query)) {
         echo "Falló la PREPARACION: (" . $sentencia->errno . ") " . $sentencia->error;
     }
-    if (!$sentencia->bind_param("sssiss", $tipo, $nombrec, $principioa, $cantidadp, $fechaelab, $fechacadu)) {
+    if (!$sentencia->bind_param("sssdsss", $tipo, $nombrec, $principioa, $cantidadp, $fechaelab, $fechacadu,$tipo_estado)) {
         echo "Falló la vinculación de parámetros: (" . $sentencia->errno . ") " . $sentencia->error;
     }
     if (!$sentencia->execute()) {
         echo "Falló la ejecución: (" . $sentencia->errno . ") " . $sentencia->error;
     }
-    echo "Productos";
+   
 }
 
 function obtener_producto_por_id($id) {

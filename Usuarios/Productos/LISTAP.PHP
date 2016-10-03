@@ -16,28 +16,14 @@ if (isset($_POST['submit'])) {
     $fechacadu = $_POST['fechacadu'];
     $unidad = $_POST['unidad'];
     $tipo_sl = $_POST['tipo_sl'];
-    if (logged_in()) {
-        if ($unidad != 4)) {
-            if (strcmp("L", $tipo_sl) == 0) {
-                switch ($tipo_sl) {
-                    case $value:
-
-
-                        break;
-
-                    default:
-                        break;
-                }
-            } else {
-                
-            }
+    if (logged_in()) {       
+           $var_mensaje = Productos($tipo, $nombrec, $principioa, $cantidadp, $fechaelab, $fechacadu,$tipo_sl,$unidad);
+            $var_mensaje = "Datos";
+        } else {
+            $var_mensaje = "Datos insertadas";
         }
-        //$var_mensaje = Productos($tipo, $nombrec, $principioa, $cantidadp, $fechaelab, $fechacadu);
-        $var_mensaje = "Datos";
-    } else {
-        $var_mensaje = "Datos insertadas";
     }
-}
+
 $registros = optener_todos_productos_quimicos();
 ?>
 <html>
@@ -101,7 +87,8 @@ $registros = optener_todos_productos_quimicos();
                     <th>ACTIVO</th>
                 </tr>   
             </thead>
-            <?php foreach ($registros as $reg) { ?>  
+            <?php $registros = optener_todos_productos_organico();
+            foreach ($registros as $reg) { ?>  
                 <tr>
 
                     <td><?php echo $reg['nombre_com']; ?></td>  

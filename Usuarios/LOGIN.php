@@ -14,7 +14,8 @@
         if (isset($_POST['submit'])) {// sI ESQ HIZO CLICK.
             $usuario = $_POST['usuario'];
             $contrasena = $_POST['contrasena'];
-            if (!logged_in()) {
+            if (logged_in()) {
+                print_r($_SESSION);
                 $var_mensaje = Login($usuario, $contrasena);
             } else {
                 header('Location:MENU.php');
