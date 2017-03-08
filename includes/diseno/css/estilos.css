@@ -1,0 +1,115 @@
+.logo{
+    margin: 0 auto;
+}
+.navbar,
+.dropdown-menu{
+    background: #43B000;
+    color: #64FF00;
+    
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+
+nav>.active>a:hover {
+    color: #555;
+    background-color: #e7e7e7;
+}
+
+.container input[type=text],select,input[type=date],input[type=number]{
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    margin: 3px;
+}
+
+
+.label_menu{
+    padding: 3px;
+    padding-left: 17px;
+    margin: 0 auto;
+    color: white;
+}
+.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+    color: white;
+}
+.navbar-default .navbar-nav .open .dropdown-menu>li{
+    border-bottom: 1px solid white;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+
+.row .col-md-4 img{
+    float: left;
+}
+.row .col-md-4 a{
+    align-content: center;
+    margin:  30px;
+}
+.clearfix {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+    }
+    
+ td   .btn-success{
+       width: 100%;
+       background: #43B000;
+       margin-top: 10px;
+       margin-bottom: 15px;
+        
+    }
+    
+.ocultar{
+        display: none;
+        visibility: hidden
+    }
+    
+html{
+         text-transform: capitalize;
+         font-size: 8px;
+      
+}
+
+th, td{
+    text-align: center;
+}
+
+thead{
+    background: #31B404;
+        
+}
+
+.conCabezera{
+    width: 100%;
+    background:  #e6e6e6;
+    margin-bottom: 0
+        
+}
+
+.proximoVencer{
+    background: #ff8a8a;
+}
+table
+{
+    border: #31B404;
+}
