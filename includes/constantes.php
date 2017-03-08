@@ -1,6 +1,6 @@
-<?php // 
+<?php 
 define ("DB_SERVIDOR","localhost");
-define ("DB_USUARIO","root");
-define ("DB_PASS","ricardo");
-define ("DB_NOMBRE","ecuaforestar");
+define ("DB_USUARIO","cowopxpx_root");
+define ("DB_PASS","jnolivarez");
+define ("DB_NOMBRE","cowopxpx_ecuaforestar");
 ?>
