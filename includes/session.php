@@ -9,7 +9,7 @@ function logged_in() {
 
 function confirmar_logged_in() {
     if (!logged_in()) {
-        Redireccionar("http://localhost:8080/Ecuaforestar/usuarios/login.php");
+        Redireccionar("/Ecuaforestar/usuarios/login.php");
     }
 }
 //if (ini_get("session.use_cookies")) 

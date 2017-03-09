@@ -2,6 +2,7 @@
 <?php require_once ("../../includes/conexion.php"); ?>
 <?php require_once ("../../includes/funciones.php"); ?>
 
+
 <?php
 
 if (isset($_GET['id'])) {
