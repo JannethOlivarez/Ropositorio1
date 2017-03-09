@@ -4,7 +4,7 @@ session_start();
 
 function logged_in() {
 
-    return isset($_SESSION['codigo']);
+    return isset($_session['codigo']);
 }
 
 function confirmar_logged_in() {
